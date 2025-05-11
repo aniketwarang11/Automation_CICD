@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="browser">FIREFOX</entry>
+	<entry key="appURLfirstPart">https://</entry>
+	<entry key="devAppURLfirstPart">http://</entry>
+	<entry key="devAppURLendPart">-ux-2.nylinsure1.com</entry>
+	<entry key="dev2AppURLendPart">.nylinsure1.com</entry>
+	<entry key="appURLEndPart">preview2.nylinsure2.com/</entry>
+	<entry key="appURLEndPartUAT">preview.nylinsure2.com/</entry>
+	<entry key="appURLEndPartPre">.nylinsure2.com/</entry>
+	<entry key="appURLEndPart2">campaign=147</entry>
+	<entry key="appURLEndPart3">form=advisor</entry>
+	<entry key="appURLEndPart4">campaign=ADVISOR</entry>
+	<entry key="appURLEndPart8">applicant=member,spouse</entry>
+	<entry key="appURLEndPartIEEE">apply=form</entry>
+	<entry key="driver_retryIntervalSec">20</entry>
+	<entry key="driver_retries">8</entry>
+	<entry key="fastWeb">false</entry>
+	<entry key="manufacturer">Samsung</entry>
+	<entry key="platformName">FirefoxLocal</entry>
+	<!-- <entry key="securityToken">eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJSSUJxWkp2eUZEZlowcFpUTVktVk03WndqdGRWd3ZEdlEtd2FlZGNRUzRrIn0.eyJqdGkiOiJhOGNhMDhkMS02Yzk4LTQ5ZGUtOTgyYS1mMThiYmQ5NTc0NWIiLCJleHAiOjAsIm5iZiI6MCwiaWF0IjoxNTU1NDgxOTUwLCJpc3MiOiJodHRwczovL2F1dGgucGVyZmVjdG9tb2JpbGUuY29tL2F1dGgvcmVhbG1zL255bC1nbWFkcG9ydGFsLXBlcmZlY3RvbW9iaWxlLWNvbSIsImF1ZCI6Im9mZmxpbmUtdG9rZW4tZ2VuZXJhdG9yIiwic3ViIjoiNGU0OGFjZWUtM2I4OS00MTY5LTgzY2MtNDA5N2RiOTg1MDZlIiwidHlwIjoiT2ZmbGluZSIsImF6cCI6Im9mZmxpbmUtdG9rZW4tZ2VuZXJhdG9yIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiOWFjMjUyYzItMTI0Yy00MTY0LWE4MDQtMWUyMzQxYjU2YmRjIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19fQ.eytxxgh6GyKbPo_w6_AZ-KhLOpJaoKdBkRtqys5GKb5ukRI7_M_sGfJoLuj3YvCFOxE8s6bMRGYpl3ntKPnYH6FbEc1EJVYlvp03FbZxpdjN9EhtL4vO2BhAQ4YCxij5q_oLr9GJtSwqWvZpKwBKV_mbvkRVFvB-p4yxZhJ4_21FJY3F8kudzbJb4P_mF0zTquogKsSiZronX86Y1um4Zg32G3v-qoJnXKXDDpZOPRFF-dXRD4Nynf0JvgDLD7ZReOccxlJzIkaVUc86vCXbf8o__8J7BrBGeWanuG35KuXDAlh4ImagXoRUCTmc6QlW0czdLIrA1hY9boNcSa7Sjg</entry> -->
+	<entry key="cloudURL">nyl-gmadportal.perfectomobile.com</entry>
+	<entry key="automationName">Appium</entry>
+	<entry key="screenshotOnError">true</entry>
+	<entry key="deviceName">None</entry>
+	<entry key="appURLEndPartNSE">?nsc=true</entry>
+	<entry key="appURLEndPartTest">preview2.nylinsure2.com/</entry>
+</properties>
+
+<!-- environment: TEST1- https://xxxpreview2.nylinsure2.com/ UAT- https://xxxpreview.nylinsure2.com/ 
+	PRE-PRODUCTION- https://xxx.nylinsure2.com/ -->
