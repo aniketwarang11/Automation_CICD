@@ -23,12 +23,12 @@ pipeline {
     stage('SonarCloud Analysis') {
       steps {
         withSonarQubeEnv('SonarCloud') {
-          bat 'C:\\Softwares\\sonar-scanner-7.1.0.4889-windows-x64\\bin\\sonar-scanner.bat ^
-              -Dsonar.projectKey=Automation_CICD ^
-              -Dsonar.organization=aniketwarang11 ^
-              -Dsonar.host.url=https://sonarcloud.io ^
-              -Dsonar.login=%SONAR_TOKEN%'
-        }
+  bat 'C:\\Softwares\\sonar-scanner-7.1.0.4889-windows-x64\\bin\\sonar-scanner.bat ^
+      -Dsonar.projectKey=Automation_CICD ^
+      -Dsonar.organization=autonation ^
+      -Dsonar.host.url=https://sonarcloud.io ^
+      -Dsonar.login=%SONAR_TOKEN%'
+}
       }
     }
 
