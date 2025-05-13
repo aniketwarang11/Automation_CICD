@@ -2,8 +2,8 @@ pipeline {
   agent any
 
   tools {
-    // Add this only if SonarScanner is configured as a tool in Jenkins
-    // sonarScanner 'SonarScanner'
+    maven "MAVEN_HOME"
+	jdk "JAVA_17"
   }
 
   environment {
@@ -11,13 +11,39 @@ pipeline {
   }
 
   stages {
-    stage('Checkout') {
+    stage('fetch code') {
       steps {
-        git 'https://github.com/aniketwarang11/Automation_CICD.git'
+        git branch: 'main', url: 'https://github.com/aniketwarang11/Automation_CICD.git'
+      }
+    }
+	
+	stages {
+    stage('build-app') {
+      steps {
+        sh 'mvn clean install -DskipTests'
+      }
+    }
+	
+	stages {
+    stage('app-compile') {
+      steps {
+        sh 'mvn clean compile -DskipTests'
+      }
+    }
+	
+	stages {
+    stage('build-app') {
+      steps {
+        sh 'mvn clean install -DskipTests'
       }
     }
 
-    stage('SonarCloud Analysis') {
+    stage('Code analysis with sonarqube') {
+	
+	environment{
+	scannerHome = tool 'sonar-scanner-6'
+	}
+	
       steps {
         withSonarQubeEnv('Sonar-server') {
   sh '''{scannerHome}/bin/sonar-scanner \
