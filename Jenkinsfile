@@ -22,12 +22,14 @@ pipeline {
 
     stage('SonarCloud Analysis') {
       steps {
-        withSonarQubeEnv('SonarCloud') {
+        withSonarQubeEnv('Sonar-server') {
   bat 'C:\\Softwares\\sonar-scanner-7.1.0.4889-windows-x64\\bin\\sonar-scanner.bat ^
-      -Dsonar.projectKey=Automation_CICD ^
-      -Dsonar.organization=autonation ^
-      -Dsonar.host.url=https://sonarcloud.io ^
-      -Dsonar.login=%SONAR_TOKEN%'
+      -Dsonar.projectKey=cucumber_bdd ^
+	  -Dsonar.projectName=cucumber_bdd ^
+	  -Dsonar.projectVersion=1.0 ^
+	  -Dsonar.sources=src/main/java ^
+	  -Dsonar.java.binaries=src/main/java ^
+      -Dsonar.organization=automation_cicd ^
 }
       }
     }
