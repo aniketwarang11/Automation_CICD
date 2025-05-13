@@ -6,10 +6,6 @@ pipeline {
 	jdk "JAVA_17"
   }
 
-  environment {
-    SONAR_TOKEN = credentials('sonarcloud-token')
-  }
-
   stages {
     stage('fetch code') {
       steps {
