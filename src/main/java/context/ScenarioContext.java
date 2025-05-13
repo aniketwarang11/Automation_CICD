@@ -23,7 +23,6 @@ public class ScenarioContext {
 	private static final ThreadLocal<SoftAssertions> softAssertions = ThreadLocal.withInitial(SoftAssertions::new);
 
 	public SoftAssertions getSoftAssertions() {
-		System.out.println("In getSoftAssertions()");
 		return softAssertions.get();
 	}
 
