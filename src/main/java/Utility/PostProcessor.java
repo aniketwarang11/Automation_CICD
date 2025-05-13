@@ -18,7 +18,7 @@ public class PostProcessor {
 
     public static void main(String[] args) throws Exception {
     	
-    	 System.out.println("=== Running PostProcessor ===");
+    	 System.out.println("=== Running PostProcessor === through Push");
         String jsonPath = "target/cucumber-reports/Cucumber.json";
         String stepErrorsPath = "target/stepErrors.json";
         
