@@ -28,13 +28,6 @@ pipeline {
         sh 'mvn clean compile -DskipTests'
       }
     }
-  
-	
-    stage('build-app') {
-      steps {
-        sh 'mvn clean install -DskipTests'
-      }
-    }
 
     stage('Code analysis with sonarqube') {
 	
