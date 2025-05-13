@@ -1,54 +1,53 @@
 pipeline {
-  agent any
+    agent any
 
-  tools {
-    maven "MAVEN_HOME"
-	jdk "JAVA_17"
-  }
-
-  stages {
-    stage('fetch code') {
-      steps {
-        git branch: 'main', url: 'https://github.com/aniketwarang11/Automation_CICD.git'
-      }
-    }
-	
-    stage('build-app') {
-      steps {
-        bat 'mvn clean install -DskipTests'
-      }
-    }
-	
-    stage('app-compile') {
-      steps {
-        bat 'mvn clean compile -DskipTests'
-      }
+    tools {
+        maven "MAVEN_HOME"
+        jdk "JAVA_17"
     }
 
-    stage('Code analysis with sonarqube') {
-	
-    environment{
-    scannerHome = tool 'sonar-scanner-6'
-    }
-	
-      steps {
-        withSonarQubeEnv('Sonar-server') {
-        bat '''{scannerHome}/bin/sonar-scanner ^
-              -Dsonar.projectKey=cucumber_bdd ^
-	            -Dsonar.projectName=cucumber_bdd ^
-	            -Dsonar.projectVersion=1.0 ^
-	            -Dsonar.sources=src/main/java ^
-	            -Dsonar.java.binaries=src/main/java ^
-              -Dsonar.organization=automation_cicd'''
-		          }
-          }
-      }
+    stages {
+        stage('Fetch Code') {
+            steps {
+                git branch: 'main', url: 'https://github.com/aniketwarang11/Automation_CICD.git'
+            }
+        }
 
-    stage('Build or Test') {
-      steps {
-        echo 'Run your build/test steps here'
-      }
+        stage('Build App') {
+            steps {
+                bat 'mvn clean install -DskipTests'
+            }
+        }
+
+        stage('App Compile') {
+            steps {
+                bat 'mvn clean compile -DskipTests'
+            }
+        }
+
+        stage('Code Analysis with SonarQube') {
+            environment {
+                scannerHome = tool 'sonar-scanner-6'
+            }
+            steps {
+                withSonarQubeEnv('Sonar-server') {
+                    bat """
+                        ${scannerHome}\\bin\\sonar-scanner ^
+                        -Dsonar.projectKey=cucumber_bdd ^
+                        -Dsonar.projectName=cucumber_bdd ^
+                        -Dsonar.projectVersion=1.0 ^
+                        -Dsonar.sources=src/main/java ^
+                        -Dsonar.java.binaries=target ^
+                        -Dsonar.organization=automation_cicd
+                    """
+                }
+            }
+        }
+
+        stage('Build or Test') {
+            steps {
+                echo 'Run your build/test steps here'
+            }
+        }
     }
-  }
 }
-  
