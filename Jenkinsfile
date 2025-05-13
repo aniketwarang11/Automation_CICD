@@ -15,13 +15,13 @@ pipeline {
 	
     stage('build-app') {
       steps {
-        sh 'mvn clean install -DskipTests'
+        bat 'mvn clean install -DskipTests'
       }
     }
 	
     stage('app-compile') {
       steps {
-        sh 'mvn clean compile -DskipTests'
+        bat 'mvn clean compile -DskipTests'
       }
     }
 
@@ -33,12 +33,12 @@ pipeline {
 	
       steps {
         withSonarQubeEnv('Sonar-server') {
-        sh '''{scannerHome}/bin/sonar-scanner \
-              -Dsonar.projectKey=cucumber_bdd \
-	            -Dsonar.projectName=cucumber_bdd \
-	            -Dsonar.projectVersion=1.0 \
-	            -Dsonar.sources=src/main/java \
-	            -Dsonar.java.binaries=src/main/java \
+        bat '''{scannerHome}/bin/sonar-scanner ^
+              -Dsonar.projectKey=cucumber_bdd ^
+	            -Dsonar.projectName=cucumber_bdd ^
+	            -Dsonar.projectVersion=1.0 ^
+	            -Dsonar.sources=src/main/java ^
+	            -Dsonar.java.binaries=src/main/java ^
               -Dsonar.organization=automation_cicd'''
 		          }
           }
