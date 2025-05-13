@@ -1,6 +1,3 @@
-Sonar cloud token -> 933d983a6c810601f7b432418d667c43613185b8
-
-
 pipeline {
   agent any
 
