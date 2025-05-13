@@ -38,7 +38,6 @@ pipeline {
                         -Dsonar.projectVersion=1.0 ^
                         -Dsonar.sources=src/main/java ^
                         -Dsonar.java.binaries=target ^
-                        -Dsonar.organization=automation_cicd
                     """
                 }
             }
