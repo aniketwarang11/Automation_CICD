@@ -1,5 +1,6 @@
 package Utility;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.lang.reflect.Type;
@@ -20,6 +21,12 @@ public class PostProcessor {
     	 System.out.println("=== Running PostProcessor ===");
         String jsonPath = "target/cucumber-reports/Cucumber.json";
         String stepErrorsPath = "target/stepErrors.json";
+        
+        File file = new File("target/stepErrors.json");
+        if (!file.exists()) {
+            System.out.println("WARNING: stepErrors.json not found. Skipping post-processing.");
+            return;
+        }
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
