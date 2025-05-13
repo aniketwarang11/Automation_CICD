@@ -17,21 +17,19 @@ pipeline {
       }
     }
 	
-	stages {
     stage('build-app') {
       steps {
         sh 'mvn clean install -DskipTests'
       }
     }
 	
-	stages {
     stage('app-compile') {
       steps {
         sh 'mvn clean compile -DskipTests'
       }
     }
+  
 	
-	stages {
     stage('build-app') {
       steps {
         sh 'mvn clean install -DskipTests'
@@ -40,22 +38,22 @@ pipeline {
 
     stage('Code analysis with sonarqube') {
 	
-	environment{
-	scannerHome = tool 'sonar-scanner-6'
-	}
+    environment{
+    scannerHome = tool 'sonar-scanner-6'
+    }
 	
       steps {
         withSonarQubeEnv('Sonar-server') {
-  sh '''{scannerHome}/bin/sonar-scanner \
-      -Dsonar.projectKey=cucumber_bdd \
-	  -Dsonar.projectName=cucumber_bdd \
-	  -Dsonar.projectVersion=1.0 \
-	  -Dsonar.sources=src/main/java \
-	  -Dsonar.java.binaries=src/main/java \
-      -Dsonar.organization=automation_cicd'''
-		}
+        sh '''{scannerHome}/bin/sonar-scanner \
+              -Dsonar.projectKey=cucumber_bdd \
+	            -Dsonar.projectName=cucumber_bdd \
+	            -Dsonar.projectVersion=1.0 \
+	            -Dsonar.sources=src/main/java \
+	            -Dsonar.java.binaries=src/main/java \
+              -Dsonar.organization=automation_cicd'''
+		          }
+          }
       }
-    }
 
     stage('Build or Test') {
       steps {
@@ -64,3 +62,4 @@ pipeline {
     }
   }
 }
+  
